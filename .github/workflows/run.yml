@@ -1,0 +1,14 @@
+name: Build and Publish Docker
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Run Docker Image from Repository
+      uses: martyr30/actions/ssh-docker-run@master
+      with:
+        user: ${{ secrets.USER }}
+        host: ${{ secrets.HOST }}
+        dep_key: ${{ secrets.PRIVATE_KEY }}
+        iam: ${{ secrets.IAM }}
