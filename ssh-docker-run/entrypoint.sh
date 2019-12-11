@@ -24,7 +24,7 @@ function main() {
   echo "Run.sh go!"
 
   #ssh -o StrictHostKeyChecking=no -A -tt $INPUT_USER@$INPUT_HOST "$HOME/run.sh $INPUT_IAM"
-  scp -i $SSH_PATH/dep_key $HOME/run.sh $INPUT_USER@$INPUT_HOST:/home/$INPUT_USER/
+  scp -o StrictHostKeyChecking=no $HOME/run.sh $INPUT_USER@$INPUT_HOST:/home/$INPUT_USER/
   ssh -o StrictHostKeyChecking=no -A -tt $INPUT_USER@$INPUT_HOST "$HOME/run.sh $INPUT_IAM"
   #ssh -o StrictHostKeyChecking=no -A -tt $INPUT_USER@$INPUT_HOST "mkdir test-github"
 
