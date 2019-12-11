@@ -19,7 +19,7 @@ function main() {
   eval $(ssh-agent)
   ssh-add "$SSH_PATH/dep_key"
 
-  ssh-keygen -t rsa $INPUT_HOST >> "$SSH_PATH/known_hosts"
+  ssh-keyscan -t rsa $INPUT_HOST >> "$SSH_PATH/known_hosts"
 
   echo "Run.sh go!"
 
