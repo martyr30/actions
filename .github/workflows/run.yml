@@ -11,4 +11,4 @@ jobs:
         user: ${{ secrets.USER }}
         host: ${{ secrets.HOST }}
         dep_key: ${{ secrets.PRIVATE_KEY }}
-        iam: ${{ secrets.IAM }}
+        oauth: ${{ secrets.OAUTH }}
