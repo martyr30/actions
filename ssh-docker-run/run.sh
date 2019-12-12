@@ -9,8 +9,8 @@ echo "$1" >> oauth.txt
 #docker login --username iam --password ${IAM} cr.yandex
 
 #cat iam4.txt | sudo docker login --username iam --password-stdin
-cat oauth.txt | sudo docker login --username oauth --password-stdin
+cat oauth.txt | sudo docker login --username oauth --password-stdin cr.yandex
 
 sudo docker pull cr.yandex/${REGISTRY_ID}/test-image:latest
 
-sudo docker run cr.yandex/${REGISTRY_ID}/test-image:latest
+sudo docker run -d cr.yandex/${REGISTRY_ID}/test-image:latest
