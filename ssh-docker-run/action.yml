@@ -11,9 +11,12 @@ inputs:
   dep_key:
     description: 'Private key'
     required: true
-  iam:
-    description: 'IAM'
+  oauth:
+    description: 'OAUTH key'
     required: true
+  registry:
+    description: 'Registry ID'
+    required: true    
 runs:
   using: 'docker'
   image: 'Dockerfile'

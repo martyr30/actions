@@ -12,3 +12,4 @@ jobs:
         host: ${{ secrets.HOST }}
         dep_key: ${{ secrets.PRIVATE_KEY }}
         oauth: ${{ secrets.OAUTH }}
+        registry: ${{ secrets.REGISTRY_ID }}

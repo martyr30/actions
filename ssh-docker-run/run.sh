@@ -1,7 +1,7 @@
 #!/bin/sh
 
-INSTANCE_ID="ef3hlkn2il5rcsaev40r"
-REGISTRY_ID="crptjipt08rs009ssq7m"
+#INSTANCE_ID="ef3hlkn2il5rcsaev40r"
+#REGISTRY_ID="crptjipt08rs009ssq7m"
 IAM=$1
 echo "$1" >> oauth.txt
 #echo "$IAM" >> iam2.txt
@@ -11,6 +11,6 @@ echo "$1" >> oauth.txt
 #cat iam4.txt | sudo docker login --username iam --password-stdin
 cat oauth.txt | sudo docker login --username oauth --password-stdin cr.yandex
 
-sudo docker pull cr.yandex/${REGISTRY_ID}/test-image:latest
+sudo docker pull cr.yandex/$2/test-image:latest
 
-sudo docker run -d cr.yandex/${REGISTRY_ID}/test-image:latest
+sudo docker run -d cr.yandex/$2/test-image:latest
