@@ -25,8 +25,8 @@ function main() {
 
   #ssh -o StrictHostKeyChecking=no -A -tt $INPUT_USER@$INPUT_HOST "$HOME/run.sh $INPUT_IAM"
   ls -a
-  scp -o StrictHostKeyChecking=no ./ssh-docker-run/run.sh $INPUT_USER@$INPUT_HOST:/home/$INPUT_USER/
-  ssh -o StrictHostKeyChecking=no -A -tt $INPUT_USER@$INPUT_HOST "./run.sh $INPUT_OAUTH $INPUT_REGISTRY"
+  scp -r -o StrictHostKeyChecking=no ./ssh-docker-run/service/$INPUT_SERVICE_NAME/ $INPUT_USER@$INPUT_HOST:/home/$INPUT_USER/
+  ssh -o StrictHostKeyChecking=no -A -tt $INPUT_USER@$INPUT_HOST "./$INPUT_SERVICE_NAME/run.sh $INPUT_OAUTH $INPUT_REGISTRY"
   #ssh -o StrictHostKeyChecking=no -A -tt $INPUT_USER@$INPUT_HOST "mkdir test-github"
 
 }
